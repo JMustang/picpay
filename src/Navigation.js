@@ -52,7 +52,7 @@ export default function Navigation() {
           backgroundColor: "#131418",
           borderTopColor: "rgba(255, 255, 255, 0.2)",
         },
-        activeTintColor: "#fff",
+        activeTintColor: "#ff00ff",
         inactiveTintColor: "#92929c",
       }}
     >
