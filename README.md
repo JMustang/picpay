@@ -1,22 +1,17 @@
 # PicPay Clone
+Repository with source code, where I create a PicPay clone using React Native, EXPO, Styled Components and React Navigation 5.
 
-Repositório com o código fonte desenvolvido onde crio um clone do PicPay utilizando React Native, EXPO, Styled Components e React Navigation 5.
-
-## Instalação
-
-Você precisará ter o Node.js instalado na sua máquina.
-Clone este repositório:
-
-acesse a pasta do projeto, instale as dependências executando o seguinte comando:
+## Installation
+You will need to have Node.js installed on your machine.
+Clone this repository:
+access the project folder, install the dependencies by running the following command:
 ```sh
-  $ yarn install # ou npm install
+  $ yarn install # or npm install
 ```
 
-## Executando a aplicação
-
-Execute:
+## Running the application
+Run:
 ```sh
   $ yarn start # ou npm start
 ```
-
-Abra o emulador pelo seu computador, ou o aplicativo do Expo no seu celular.
+Open the emulator from your computer, or the Expo application on your phone.
