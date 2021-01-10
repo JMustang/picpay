@@ -4,6 +4,7 @@ import {
   MaterialCommunityIcons,
   FontAwesome,
 } from "@expo/vector-icons";
+//import { Switch } from "react-native";
 
 import {
   Wrapper,
@@ -18,7 +19,10 @@ import {
   Actions,
   Action,
   ActionLabel,
+  UseBalance,
+  UseBalanceTitle,
 } from "./styles";
+import { Switch } from "react-native-gesture-handler";
 
 export default function Wallet() {
   return (
@@ -50,6 +54,11 @@ export default function Wallet() {
           </Actions>
         </HeaderContainer>
       </Header>
+
+      <UseBalance>
+        <UseBalanceTitle>Usar saldo ao pagar.</UseBalanceTitle>
+        <Switch />
+      </UseBalance>
     </Wrapper>
   );
 }
