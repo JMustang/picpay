@@ -79,3 +79,52 @@ export const UseBalanceTitle = styled.Text`
   font-size: 16px;
   font-weight: bold;
 `;
+export const PaymentMethodsTitle = styled.Text`
+  color: #8e8e93;
+  text-transform: uppercase;
+`;
+
+export const PaymentMethods = styled.View`
+  margin-top: 25px;
+  padding: 0 16px;
+`;
+
+export const Card = styled.View`
+  background: #1e232a;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+`;
+export const CardBody = styled.View`
+  flex-direction: row;
+`;
+
+export const CardDetails = styled.View`
+  flex: 1;
+  margin-right: 15px;
+`;
+export const CardTitle = styled.Text`
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+`;
+export const CardInfo = styled.Text`
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 15px;
+`;
+export const Img = styled.Image`
+  width: 60px;
+`;
+
+export const AddButton = styled.TouchableOpacity`
+  margin-top: 20px;
+  flex-direction: row;
+  align-items: center;
+`;
+export const AddLabel = styled.Text`
+  color: #0db060;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+`;

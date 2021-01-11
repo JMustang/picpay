@@ -3,6 +3,7 @@ import {
   Feather,
   MaterialCommunityIcons,
   FontAwesome,
+  AntDesign,
 } from "@expo/vector-icons";
 //import { Switch } from "react-native";
 
@@ -21,7 +22,20 @@ import {
   ActionLabel,
   UseBalance,
   UseBalanceTitle,
+  PaymentMethodsTitle,
+  PaymentMethods,
+  Card,
+  CardDetails,
+  CardTitle,
+  CardInfo,
+  Img,
+  CardBody,
+  AddButton,
+  AddLabel,
 } from "./styles";
+
+import creditCard from "../../images/credit-card.png";
+
 import { Switch } from "react-native-gesture-handler";
 
 export default function Wallet() {
@@ -59,6 +73,25 @@ export default function Wallet() {
         <UseBalanceTitle>Usar saldo ao pagar.</UseBalanceTitle>
         <Switch />
       </UseBalance>
+      <PaymentMethods>
+        <PaymentMethodsTitle>Formas de pagamento.</PaymentMethodsTitle>
+        <Card>
+          <CardBody>
+            <CardDetails>
+              <CardTitle>Cadastre seu cartão de credito.</CardTitle>
+              <CardInfo>
+                Cadastre um cartão de credito para poder fazer pagamentos mesmo
+                quando nao tiver saldo no seu PicPay.
+              </CardInfo>
+            </CardDetails>
+            <Img source={creditCard} resizeMode="contain" />
+          </CardBody>
+          <AddButton>
+            <AntDesign name="pluscircleo" size={30} color="#0db060" />
+            <AddLabel>Adicionar cartão de credito.</AddLabel>
+          </AddButton>
+        </Card>
+      </PaymentMethods>
     </Wrapper>
   );
 }
