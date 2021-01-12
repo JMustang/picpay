@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Feather,
   MaterialCommunityIcons,
@@ -32,6 +32,9 @@ import {
   CardBody,
   AddButton,
   AddLabel,
+  UseTicketButton,
+  UseTicketLabel,
+  UseTicketContainer,
 } from "./styles";
 
 import creditCard from "../../images/credit-card.png";
@@ -39,18 +42,34 @@ import creditCard from "../../images/credit-card.png";
 import { Switch } from "react-native-gesture-handler";
 
 export default function Wallet() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [useBalance, setUseBalance] = useState(true);
+
+  function handleToggleVisibility() {
+    setIsVisible((prevState) => !prevState);
+  }
+  function handleToggleUseBalance() {
+    setUseBalance((prevState) => !prevState);
+  }
+
   return (
     <Wrapper>
-      <Header colors={["#52e78c", "#1ab563"]}>
+      <Header
+        colors={useBalance ? ["#52e78c", "#1ab563"] : ["#d3d3d3", "#868686"]}
+      >
         <HeaderContainer>
           <Title>Saldo PicPay</Title>
 
           <BalanceContainer>
             <Value>
-              R$ <Bold>0,00</Bold>
+              R$ <Bold>{isVisible ? "0,00" : "****"}</Bold>
             </Value>
-            <EyeButton>
-              <Feather name="eye" size={28} color="#fff" />
+            <EyeButton onPress={handleToggleVisibility}>
+              <Feather
+                name={isVisible ? "eye" : "eye-off"}
+                size={28}
+                color="#fff"
+              />
             </EyeButton>
           </BalanceContainer>
 
@@ -71,7 +90,7 @@ export default function Wallet() {
 
       <UseBalance>
         <UseBalanceTitle>Usar saldo ao pagar.</UseBalanceTitle>
-        <Switch />
+        <Switch value={useBalance} onValueChange={handleToggleUseBalance} />
       </UseBalance>
       <PaymentMethods>
         <PaymentMethodsTitle>Formas de pagamento.</PaymentMethodsTitle>
@@ -91,6 +110,17 @@ export default function Wallet() {
             <AddLabel>Adicionar cartão de credito.</AddLabel>
           </AddButton>
         </Card>
+
+        <UseTicketContainer>
+          <UseTicketButton>
+            <MaterialCommunityIcons
+              name="ticket-outline"
+              size={20}
+              color="#0db060"
+            />
+            <UseTicketLabel>Usar codigo promocional.</UseTicketLabel>
+          </UseTicketButton>
+        </UseTicketContainer>
       </PaymentMethods>
     </Wrapper>
   );
